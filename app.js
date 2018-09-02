@@ -9,11 +9,9 @@ var imageInput = document.getElementById("image-input");
 var imageContainer = document.getElementById("image-container");
 var canvas = document.getElementById("canvas");
 
-showImage(imageInput, imageContainer, canvas);
-
-function showImage(imageInput,imageContainer,canvas) {
+$(imageInput).on('change', () => {
     let fileReader = new FileReader();
-
+    console.log('test');
     //When image is loaded, set the src of the image where you want to display it
     fileReader.onload = (e) => {
         imageContainer.src = e.target.result;
@@ -24,12 +22,9 @@ function showImage(imageInput,imageContainer,canvas) {
         getAverageColor(canvas);
         getMostUsedColors(canvas, 4);
     }
-    
-    imageInput.addEventListener("change",function() {
-      //Fill fr with image data    
-      fileReader.readAsDataURL(src.files[0]);
-    });
-  }
+
+    fileReader.readAsDataURL(imageInput.files[0]);
+});
 
 function getAverageColor(canvas) {
     let pixels = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
