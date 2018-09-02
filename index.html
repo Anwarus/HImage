@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <input id="src" style="visibility: hidden;" type="file"/>
+        <input id="image-input" style="visibility: hidden;" type="file"/>
         <svg id="title" width="100%" height="40%" viewbox="0, 0, 400, 140">
             <polygon points="0, 0, 400, 0, 360, 40, 40, 40, 0, 0" style="fill: #19647e; stroke: #119da4"/>
             <polygon points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #19647e; stroke: #119da4" />
@@ -18,7 +18,7 @@
             <text x="172" y="20">HImage</text>
             <text x="152" y="128">Select Image</text>
         </svg>
-        <img id="target"/>
+        <img id="image-container"/>
         <canvas id="canvas" style="visibility: hidden;" />
         <script src="./app.js"></script>
     </body>
