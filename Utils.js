@@ -21,6 +21,7 @@ export let Utils = (() => {
     };
 
     api.getAverageColor = (pixels) => {
+        //Get pixels colors as array in format [r1, g1, b1, a1, r2, g2, b2 ...]
         let pixelColors = pixels.data;
         let pixelCount = pixels.width * pixels.height;
         
@@ -28,6 +29,7 @@ export let Utils = (() => {
         let gSum = 0;
         let bSum = 0;
 
+        //Plus 4 to omit alpha values
         for(let i=0; i<pixelColors.length; i+=4) {
             rSum += pixelColors[i];
             gSum += pixelColors[i+1];
@@ -42,43 +44,48 @@ export let Utils = (() => {
     };
 
     api.getMostUsedColors = (pixels, numberOfColors) => {
+        //Get pixels colors as array in format [r1, g1, b1, a1, r2, g2, b2 ...]
         let pixelColors = pixels.data;
         let pixelCount = pixels.width * pixels.height;
 
         //Associative array where we will used colors and count of use times
         let colors = {};
 
-        for(let i=0; i<pixelColors.length; i+=128) {
+        for(let i=0; i<pixelColors.length; i+=4) {
             //Normalize colors to suit our scale
-            let r = Math.floor(pixelColors[i] * NORMALIZED_MAX_VALUE / DEFAULT_MAX_VALUE).toString();
-            let g = Math.floor(pixelColors[i+1] * NORMALIZED_MAX_VALUE / DEFAULT_MAX_VALUE).toString();
-            let b = Math.floor(pixelColors[i+2] * NORMALIZED_MAX_VALUE / DEFAULT_MAX_VALUE).toString();
+            let r = api.normalize(pixelColors[i]).toString();
+            let g = api.normalize(pixelColors[i+1]).toString();
+            let b = api.normalize(pixelColors[i+2]).toString();
             
-            r = addLeadingZero(r);
-            g = addLeadingZero(g);
-            b = addLeadingZero(b);
+            r = api.addLeadingZero(r);
+            g = api.addLeadingZero(g);
+            b = api.addLeadingZero(b);
 
-            //Make from color parts key
+            //Make from color parts key for example '012312'
             let key = r + g + b;
 
+            //Create on this index new counter or increase existing one
             if(colors[key] === undefined)
                 colors[key] = 0;
             else
                 colors[key] ++;
         }
 
+        //Return array of object keys sorted by counter value
         colors = Object.keys(colors).sort((a, b) => {
             return colors[a] - colors[b];
         });
 
+        //Get only first x colors we interested in
         colors = colors.slice(0, numberOfColors);
         
+        //Denormalize and pack into object
         let mostUsedRGBColors = [];
         for(let i=0; i<numberOfColors; i++) {
             mostUsedRGBColors[i] = {
-                r: denormalize(parseInt(colors[i].substring(0, 2))),
-                g: denormalize(parseInt(colors[i].substring(2, 4))),
-                b: denormalize(parseInt(colors[i].substring(4, 6)))
+                r: api.denormalize(parseInt(colors[i].substring(0, 2))),
+                g: api.denormalize(parseInt(colors[i].substring(2, 4))),
+                b: api.denormalize(parseInt(colors[i].substring(4, 6)))
             };
         }
 
