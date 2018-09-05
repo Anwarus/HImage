@@ -73,7 +73,7 @@ export let Utils = (() => {
 
         //Return array of object keys sorted by counter value
         colors = Object.keys(colors).sort((a, b) => {
-            return colors[a] - colors[b];
+            return colors[b] - colors[a];
         });
 
         //Get only first x colors we interested in

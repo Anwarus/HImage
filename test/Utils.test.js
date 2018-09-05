@@ -63,10 +63,18 @@ describe('Color pallete for image', () => {
                     18, 0, 190, 1
                 ]
             }, 3);
-            console.log(mostUsedColors);
+            
             expect(mostUsedColors[0].r).to.equal(255);
-            expect(mostUsedColors[0].g).to.equal(153);
+            expect(mostUsedColors[0].g).to.equal(156);
             expect(mostUsedColors[0].b).to.equal(0);
+
+            expect(mostUsedColors[1].r).to.equal(132);
+            expect(mostUsedColors[1].g).to.equal(8);
+            expect(mostUsedColors[1].b).to.equal(90);
+
+            expect(mostUsedColors[2].r).to.equal(16);
+            expect(mostUsedColors[2].g).to.equal(0);
+            expect(mostUsedColors[2].b).to.equal(189);
         });
     });
 });
