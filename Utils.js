@@ -6,11 +6,11 @@ export let Utils = (() => {
     let api = {};
 
     api.denormalize = (value) => {
-        return Math.floor((value * DEFAULT_MAX_VALUE) / NORMALIZED_MAX_VALUE);
+        return Math.round((value * DEFAULT_MAX_VALUE) / NORMALIZED_MAX_VALUE);
     };
 
     api.normalize = (value) => {
-        return Math.floor((value * NORMALIZED_MAX_VALUE) / DEFAULT_MAX_VALUE);
+        return Math.round((value * NORMALIZED_MAX_VALUE) / DEFAULT_MAX_VALUE);
     };
 
     api.addLeadingZero = (colorPart) => {

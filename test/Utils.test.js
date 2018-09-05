@@ -7,7 +7,7 @@ describe('Color pallete for image', () => {
     describe('normalize function', () => {
         it('should return in range from 0 to 31', () => {
             expect(Utils.normalize(0)).to.equal(0);
-            expect(Utils.normalize(128)).to.equal(15);
+            expect(Utils.normalize(128)).to.equal(16);
             expect(Utils.normalize(255)).to.equal(31);
         });
     });
@@ -63,7 +63,7 @@ describe('Color pallete for image', () => {
                     18, 0, 190, 1
                 ]
             }, 3);
-            
+            console.log(mostUsedColors);
             expect(mostUsedColors[0].r).to.equal(255);
             expect(mostUsedColors[0].g).to.equal(153);
             expect(mostUsedColors[0].b).to.equal(0);
