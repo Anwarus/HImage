@@ -14,36 +14,39 @@ $(function() {
     //On image change draw image in canvas using FileReader to get pixel data
     $(imageInput).on('change', () => {
         let fileReader = new FileReader();
-        
+
         //On image load by FileReader
         fileReader.onload = (e) => {
             imageContainer.src = e.target.result;
 
-            //Configure canvas and draw image
-            canvas.width = imageContainer.naturalWidth;
-            canvas.height = imageContainer.naturalHeight;
-            canvas.getContext('2d').drawImage(imageContainer, 0, 0, imageContainer.naturalWidth, imageContainer.naturalHeight);
-            
-            //Extract pixels object data
-            let pixels = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
+            //Wait until image will load at the container
+            imageContainer.onload = () => {
+                //Configure canvas and draw image
+                canvas.width = imageContainer.naturalWidth;
+                canvas.height = imageContainer.naturalHeight;
+                canvas.getContext('2d').drawImage(imageContainer, 0, 0, imageContainer.naturalWidth, imageContainer.naturalHeight);
+                
+                //Extract pixels object data
+                let pixels = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height);
 
-            let averageColor = Utils.getAverageColor(pixels);
-            let mostUsedColors = Utils.getMostUsedColors(pixels, 4);
+                let averageColor = Utils.getAverageColor(pixels);
+                let mostUsedColors = Utils.getMostUsedColors(pixels, 4);
 
-            $('#main-color').css({ fill: "rgba(" + averageColor.r + ", " + averageColor.g + ", " + averageColor.b + ", 255)" });
-            $('#first-left-color').css({ fill: "rgba(" + mostUsedColors[0].r + ", " + mostUsedColors[0].g + ", " + mostUsedColors[0].b + ", 255)" });
-            $('#second-left-color').css({ fill: "rgba(" + mostUsedColors[1].r + ", " + mostUsedColors[1].g + ", " + mostUsedColors[1].b + ", 255)" });
-            $('#first-right-color').css({ fill: "rgba(" + mostUsedColors[2].r + ", " + mostUsedColors[2].g + ", " + mostUsedColors[2].b + ", 255)" });
-            $('#second-right-color').css({ fill: "rgba(" + mostUsedColors[3].r + ", " + mostUsedColors[3].g + ", " + mostUsedColors[3].b + ", 255)" });
+                $('#main-color').css({ fill: "rgba(" + averageColor.r + ", " + averageColor.g + ", " + averageColor.b + ", 255)" });
+                $('#first-left-color').css({ fill: "rgba(" + mostUsedColors[0].r + ", " + mostUsedColors[0].g + ", " + mostUsedColors[0].b + ", 255)" });
+                $('#second-left-color').css({ fill: "rgba(" + mostUsedColors[1].r + ", " + mostUsedColors[1].g + ", " + mostUsedColors[1].b + ", 255)" });
+                $('#first-right-color').css({ fill: "rgba(" + mostUsedColors[2].r + ", " + mostUsedColors[2].g + ", " + mostUsedColors[2].b + ", 255)" });
+                $('#second-right-color').css({ fill: "rgba(" + mostUsedColors[3].r + ", " + mostUsedColors[3].g + ", " + mostUsedColors[3].b + ", 255)" });
 
-            //Move logo polygon up to make more space for image
-            $('#logo').toggleClass('slide-up');
-            //Move decoration polygon up to make more space for image
-            $('#decoration').toggleClass('slide-up');
-            //Move color polygons up to make more space for image
-            $('#colors').toggleClass('slide-up');
-            //Move image select polygon down to make more space for image
-            $('#select-image').toggleClass('slide-down');
+                //Move logo polygon up to make more space for image
+                $('#logo').toggleClass('slide-up');
+                //Move decoration polygon up to make more space for image
+                $('#decoration').toggleClass('slide-up');
+                //Move color polygons up to make more space for image
+                $('#colors').toggleClass('slide-up');
+                //Move image select polygon down to make more space for image
+                $('#select-image').toggleClass('slide-down');
+            };
         }
 
         //Load image to FileReader
