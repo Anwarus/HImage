@@ -6,17 +6,31 @@
     </head>
     <body>
         <input id="image-input" style="visibility: hidden;" type="file"/>
-        <svg id="title" width="100%" height="40%" viewbox="0, 0, 400, 140">
-            <polygon points="0, 0, 400, 0, 360, 40, 40, 40, 0, 0" style="fill: #19647e; stroke: #119da4"/>
-            <polygon points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #19647e; stroke: #119da4" />
-            <polygon id="main-color" points="200, 48, 208, 58, 208, 68, 200, 78, 192, 68, 192, 58, 200, 48" style="fill: #ffc857; stroke: #ffde9b"/>
-            <polygon id="first-left-color" points="215, 53, 221, 58, 221, 68, 215, 75, 209, 68, 209, 58, 215, 53" style="fill: #4b3f72; stroke: #8b78c9"/>
-            <polygon id="second-left-color" points="228, 53, 234, 58, 234, 68, 228, 75, 222, 68, 222, 58, 228, 53" style="fill: #4b3f72; stroke: #8b78c9"/>
-            <polygon id="first-right-color" points="185, 53, 191, 58, 191, 68, 185, 75, 179, 68, 179, 58, 185, 53" style="fill: #4b3f72; stroke: #8b78c9"/>
-            <polygon id="second-right-color" points="172, 53, 178, 58, 178, 68, 172, 75, 166, 68, 166, 58, 172, 53" style="fill: #4b3f72; stroke: #8b78c9"/>
-            <polygon id="image" points="102, 102, 142, 102, 152, 112, 248, 112, 258, 102, 298, 102, 268, 132, 132, 132, 102, 102" style="fill: #119da4; stroke: #56d8df"/>
-            <text x="172" y="20">HImage</text>
-            <text x="152" y="128">Select Image</text>
+        <svg id="title" width="100%" height="100%" viewbox="0, 0, 400, 200">
+            <!-- Polygon with logo text -->
+            <g id="logo">
+                <polygon points="0, 0, 400, 0, 360, 40, 40, 40, 0, 0" style="fill: #19647e; stroke: #119da4; stroke-width: .5px"/>
+                <text x="172" y="20">HImage</text>
+            </g>
+
+            <!-- Decoration polygon -->
+            <polygon id="decoration" points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #19647e; stroke: #119da4; stroke-width: .5px" />
+            
+            <!-- Color polygons -->
+            <g id="colors">
+                <polygon id="main-color" points="200, 48, 208, 58, 208, 68, 200, 78, 192, 68, 192, 58, 200, 48" style="fill: #ffc857; stroke: #ffde9b; stroke-width: .5px"/>
+                <polygon id="first-left-color" points="215, 53, 221, 58, 221, 68, 215, 75, 209, 68, 209, 58, 215, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
+                <polygon id="second-left-color" points="228, 53, 234, 58, 234, 68, 228, 75, 222, 68, 222, 58, 228, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
+                <polygon id="first-right-color" points="185, 53, 191, 58, 191, 68, 185, 75, 179, 68, 179, 58, 185, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
+                <polygon id="second-right-color" points="172, 53, 178, 58, 178, 68, 172, 75, 166, 68, 166, 58, 172, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
+            </g>
+
+            <!-- Polygon for select image -->
+            <g id="select-image">
+                <polygon class="positional" points="102, 102, 142, 102, 152, 112, 248, 112, 258, 102, 298, 102, 268, 132, 132, 132, 102, 102" style="fill: #119da4; stroke: #56d8df; stroke-width: .5px"/>
+                <text x="152" y="128">Select Image</text>
+            </g>
+            
         </svg>
         <img id="image-container"/>
         <canvas id="canvas" style="visibility: hidden;" />
