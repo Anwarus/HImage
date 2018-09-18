@@ -22,7 +22,7 @@ body {
 }
 
 #select-image.slide-up {
-    transform: translate(0px, -55px);
+    transform: translate(0px, 0px);
 }
 
 #logo {
@@ -33,6 +33,10 @@ body {
     transform:  translate(0px, -42px);
 }
 
+#logo.slide-down {
+    transform:  translate(0px, 0px);
+}
+
 #decoration {
     transition: transform 0.5s;
 }
@@ -41,12 +45,20 @@ body {
     transform:  translate(0px, -42px);
 }
 
+#decoration.slide-down {
+    transform:  translate(0px, 0px);
+}
+
 #colors {
     transition: transform 0.5s;
 }
 
 #colors.slide-up {
     transform:  translate(0px, -42px);
+}
+
+#colors.slide-down {
+    transform:  translate(0px, 0px);
 }
 
 #image-container {
