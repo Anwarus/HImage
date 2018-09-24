@@ -14,15 +14,19 @@
             </g>
 
             <!-- Decoration polygon -->
-            <polygon id="decoration" points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #19647e; stroke: #119da4; stroke-width: .5px" />
-            
+            <g id="decoration">
+                <polygon points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #19647e; stroke: #119da4; stroke-width: .5px" />
+                <text id="rgb-text" x="84" y="58">RGB</text>
+                <text id="hex-text" x="282" y="58">HEX</text>
+            </g>>
+
             <!-- Color polygons -->
             <g id="colors">
-                <polygon id="main-color" points="200, 48, 208, 58, 208, 68, 200, 78, 192, 68, 192, 58, 200, 48" style="fill: #ffc857; stroke: #ffde9b; stroke-width: .5px"/>
-                <polygon id="first-left-color" points="215, 53, 221, 58, 221, 68, 215, 75, 209, 68, 209, 58, 215, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
-                <polygon id="second-left-color" points="228, 53, 234, 58, 234, 68, 228, 75, 222, 68, 222, 58, 228, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
-                <polygon id="first-right-color" points="185, 53, 191, 58, 191, 68, 185, 75, 179, 68, 179, 58, 185, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
-                <polygon id="second-right-color" points="172, 53, 178, 58, 178, 68, 172, 75, 166, 68, 166, 58, 172, 53" style="fill: #4b3f72; stroke: #8b78c9; stroke-width: .5px"/>
+                <polygon id="main-color" class="color-picker" points="200, 48, 208, 58, 208, 68, 200, 78, 192, 68, 192, 58, 200, 48" />
+                <polygon id="first-left-color" class="color-picker" points="215, 53, 221, 58, 221, 68, 215, 75, 209, 68, 209, 58, 215, 53" />
+                <polygon id="second-left-color" class="color-picker" points="228, 53, 234, 58, 234, 68, 228, 75, 222, 68, 222, 58, 228, 53" />
+                <polygon id="first-right-color" class="color-picker" points="185, 53, 191, 58, 191, 68, 185, 75, 179, 68, 179, 58, 185, 53" />
+                <polygon id="second-right-color" class="color-picker" points="172, 53, 178, 58, 178, 68, 172, 75, 166, 68, 166, 58, 172, 53" />
             </g>
 
             <!-- Polygon for select image -->

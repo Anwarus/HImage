@@ -61,6 +61,17 @@ body {
     transform:  translate(0px, 0px);
 }
 
+.color-picker {
+    fill: #4b3f72;
+    stroke: #8b78c9; 
+    stroke-width: .5px;
+    transition: stroke-width 0.5s;
+}
+
+.color-picker.selected {
+    stroke-width: 1px;
+}
+
 #image-container {
     width: 96%;
     height: 90%;
@@ -72,6 +83,10 @@ body {
 
 #image-container.selected {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#rgb-text {
+    text-align: center;
 }
 
 /* .positional {

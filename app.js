@@ -66,4 +66,11 @@ $(function() {
         fileReader.readAsDataURL(imageInput.files[0]);
     });
 
+    $('.color-picker').on('click', function(){
+        $('.color-picker').removeClass('selected');
+        $(this).addClass('selected');
+
+        $('#rgb-text').text($(this).css('fill'));
+    });
+
 });
