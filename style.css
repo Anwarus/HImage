@@ -89,6 +89,14 @@ body {
     text-align: center;
 }
 
+.small-text {
+    font: italic 9px sans-serif;
+}
+
+.big-text {
+    font: italic 18px sans-serif;
+}
+
 /* .positional {
     transform: translate(0px, 10px);
     animation-name: msPositional;
