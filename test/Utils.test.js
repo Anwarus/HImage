@@ -77,4 +77,12 @@ describe('Color pallete for image', () => {
             expect(mostUsedColors[2].b).to.equal(189);
         });
     });
+
+    describe('rgbToHex function', () => {
+        it('should return string representing hexadecimal color value', () => {
+            let hexColor = Utils.rgbToHex(255, 0, 150);
+
+            expect(hexColor).to.equal('#ff0096');
+        });
+    });
 });

@@ -92,5 +92,12 @@ export let Utils = (() => {
         return mostUsedRGBColors;
     };
 
+    api.rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
+        //Convert to string numercal valuse will be converted to base 16 - hex
+        const hex = x.toString(16)
+        
+        return hex.length === 1 ? '0' + hex : hex
+    }).join('')
+
     return api;
 })();
