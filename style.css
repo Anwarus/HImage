@@ -85,16 +85,16 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#rgb-text {
-    text-align: center;
-}
-
 .small-text {
     font: italic 9px sans-serif;
+    text-shadow: 2px 2px #4a1fd6;
+    fill: #8b78c9;
 }
 
 .big-text {
-    font: italic 18px sans-serif;
+    font: italic 17px sans-serif;
+    text-shadow: 2px 2px #4a1fd6;
+    fill: #8b78c9;
 }
 
 /* .positional {
