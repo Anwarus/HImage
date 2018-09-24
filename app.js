@@ -70,7 +70,26 @@ $(function() {
         $('.color-picker').removeClass('selected');
         $(this).addClass('selected');
 
-        $('#rgb-text').text($(this).css('fill'));
+        let rgb = $(this).css('fill');
+
+        let rbgObj = rgbStringToObject(rgb);
+        let hex = Utils.rgbToHex(rbgObj.r, rbgObj.g, rbgObj.b);
+
+        $('#rgb-text').text(rgb);
+        $('#hex-text').text(hex);
     });
 
 });
+
+function rgbStringToObject(color) {
+    let colorNumbers = color.substring(
+        color.lastIndexOf("(") + 1, 
+        color.lastIndexOf(")")
+    ).split(',');
+
+    return {
+        r: parseInt(colorNumbers[0]),
+        g: parseInt(colorNumbers[1]),
+        b: parseInt(colorNumbers[2])
+    };
+}
