@@ -34,6 +34,8 @@ $(function() {
 
             //Wait until image will load at the container
             imageContainer.onload = () => {
+                $(imageContainer).addClass('selected');
+
                 //Configure canvas and draw image
                 canvas.width = imageContainer.naturalWidth;
                 canvas.height = imageContainer.naturalHeight;

@@ -82,18 +82,24 @@ body {
 }
 
 #image-container.selected {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow:  0 0 25px #56d8df;
 }
 
 .small-text {
     font: italic 9px sans-serif;
-    text-shadow: 2px 2px #4a1fd6;
+    text-shadow: 2px 2px #1a0f3b;
     fill: #8b78c9;
 }
 
 .big-text {
     font: italic 17px sans-serif;
     text-shadow: 2px 2px #4a1fd6;
+    fill: #8b78c9;
+}
+
+.interactable-text {
+    font: italic 17px sans-serif;
+    text-shadow: 2px 2px #4a1fd6, 0 0 25px blue;
     fill: #8b78c9;
 }
 
