@@ -16,8 +16,8 @@
             <!-- Decoration polygon -->
             <g id="decoration">
                 <polygon points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #119da4; stroke: #56d8df; stroke-width: .5px" />
-                <text id="rgb-text" class="small-text" x="64" y="58">RGB</text>
-                <text id="hex-text" class="small-text" x="260" y="58">HEX</text>
+                <text id="rgb-text" class="small-text selected-color" x="64" y="58">RGB</text>
+                <text id="hex-text" class="small-text selected-color" x="260" y="58">HEX</text>
             </g>>
 
             <!-- Color polygons -->
@@ -37,6 +37,7 @@
             
         </svg>
         <img id="image-container"/>
+        <input type="text" id="text-container" style="visibility: hidden;">
         <canvas id="canvas" style="visibility: hidden;" />
         <script src="./app.js"></script>
     </body>

@@ -102,16 +102,3 @@ body {
     text-shadow: 2px 2px #4a1fd6, 0 0 25px blue;
     fill: #8b78c9;
 }
-
-/* .positional {
-    transform: translate(0px, 10px);
-    animation-name: msPositional;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-  
-  @keyframes msPositional {
-    from { transform: translate(0px, 0px); fill : green; } 
-    to   { transform : translate(0px, 100px); fill : red; } 
-  } */

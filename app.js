@@ -81,6 +81,19 @@ $(function() {
         $('#hex-text').text(hex);
     });
 
+    $('.selected-color').on('click', function(){
+        const el = document.createElement('textarea');
+        el.value = $(this)[0].innerHTML;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    });
+
+    $('#hex-text').on('click', function(){
+    
+    });
+
 });
 
 function rgbStringToObject(color) {
