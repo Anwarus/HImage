@@ -79,6 +79,7 @@ body {
     top: 5%;
     position: absolute;
     z-index: -1;
+    display: block;
 }
 
 #image-container.selected {
@@ -101,4 +102,22 @@ body {
     font: italic 17px sans-serif;
     text-shadow: 2px 2px #4a1fd6, 0 0 25px blue;
     fill: #8b78c9;
+}
+
+.info {
+    color: white;
+    z-index: -1;
+}
+
+.grid-container {
+    width: 50%;
+    margin-left: 25%;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item {
+    text-align: center;
+    color: #8b78c9;
 }

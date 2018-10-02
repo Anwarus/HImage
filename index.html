@@ -2,6 +2,7 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -37,8 +38,25 @@
             
         </svg>
         <img id="image-container"/>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <i class="fas fa-file-upload fa-4x"></i><br><br>
+                Upload image - select any image from your hard drive
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-palette fa-4x"></i><br><br>
+                Get average and most used colors of seleted image
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-copy fa-4x"></i><br><br>
+                Choose interesting color and copy it's representation in RGB or HEX
+            </div>
+        </div>
+
         <input type="text" id="text-container" style="visibility: hidden;">
         <canvas id="canvas" style="visibility: hidden;" />
         <script src="./app.js"></script>
+
     </body>
 </html>
