@@ -87,21 +87,21 @@ body {
 }
 
 .small-text {
-    font: italic 9px sans-serif;
-    text-shadow: 2px 2px #1a0f3b;
-    fill: #8b78c9;
+    font: 9px sans-serif;
+    text-shadow: 2px 2px #9f7106;
+    fill: #ffd166;
 }
 
 .big-text {
-    font: italic 17px sans-serif;
-    text-shadow: 2px 2px #4a1fd6;
-    fill: #8b78c9;
+    font: 17px sans-serif;
+    text-shadow: 2px 2px #8f000f;
+    fill: #ef476f;
 }
 
 .interactable-text {
-    font: italic 17px sans-serif;
-    text-shadow: 2px 2px #4a1fd6, 0 0 25px blue;
-    fill: #8b78c9;
+    font: 17px sans-serif;
+    text-shadow: 2px 2px #9f7106;
+    fill: #ffd166;
 }
 
 .info {
