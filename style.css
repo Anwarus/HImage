@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: #1f2041;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Fredoka One', cursive;
 }
 
 #title {
@@ -87,19 +87,23 @@ body {
 }
 
 .small-text {
-    font: 9px sans-serif;
+    font-size: 9px;
+    font-family: 'Fredoka One', cursive;
     text-shadow: 2px 2px #9f7106;
     fill: #ffd166;
+    cursor: copy;
 }
 
 .big-text {
-    font: 17px sans-serif;
+    font-size: 28px;
+    font-family: 'Fredoka One', cursive;
     text-shadow: 2px 2px #8f000f;
     fill: #ef476f;
 }
 
 .interactable-text {
-    font: 17px sans-serif;
+    font-size: 17px;
+    font-family: 'Fredoka One', cursive;
     text-shadow: 2px 2px #9f7106;
     fill: #ffd166;
 }
