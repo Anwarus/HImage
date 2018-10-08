@@ -23,6 +23,9 @@ $(function() {
     $(imageInput).on('change', () => {
         let fileReader = new FileReader();
 
+        $(imageContainer).removeClass('selected');
+        imageContainer.src = '';
+
         $('#logo').replaceClass('slide-up', 'slide-down');
         $('#decoration').replaceClass('slide-up', 'slide-down');
         $('#colors').replaceClass('slide-up', 'slide-down');
@@ -69,16 +72,18 @@ $(function() {
     });
 
     $('.color-picker').on('click', function(){
-        $('.color-picker').removeClass('selected');
-        $(this).addClass('selected');
+        if($(imageContainer).hasClass('selected')) {
+            $('.color-picker').removeClass('selected');
+            $(this).addClass('selected');
 
-        let rgb = $(this).css('fill');
+            let rgb = $(this).css('fill');
 
-        let rbgObj = rgbStringToObject(rgb);
-        let hex = Utils.rgbToHex(rbgObj.r, rbgObj.g, rbgObj.b);
+            let rbgObj = rgbStringToObject(rgb);
+            let hex = Utils.rgbToHex(rbgObj.r, rbgObj.g, rbgObj.b);
 
-        $('#rgb-text').text(rgb);
-        $('#hex-text').text(hex);
+            $('#rgb-text').text(rgb);
+            $('#hex-text').text(hex);
+        }
     });
 
     $('.selected-color').on('click', function(){
@@ -88,10 +93,6 @@ $(function() {
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
-    });
-
-    $('#hex-text').on('click', function(){
-    
     });
 
 });
