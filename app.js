@@ -24,6 +24,7 @@ $(function() {
         let fileReader = new FileReader();
 
         $(imageContainer).removeClass('selected');
+        $('.selected-color').removeClass('choosed-color');
         imageContainer.src = '';
 
         $('#logo').replaceClass('slide-up', 'slide-down');
@@ -83,10 +84,13 @@ $(function() {
 
             $('#rgb-text').text(rgb);
             $('#hex-text').text(hex);
+
+            $('.selected-color').addClass('choosed-color');
+
         }
     });
 
-    $('.selected-color').on('click', function(){
+    $(document).on('click', '.choosed-color', function(){
         const el = document.createElement('textarea');
         el.value = $(this)[0].innerHTML;
         document.body.appendChild(el);
