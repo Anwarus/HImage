@@ -68,8 +68,13 @@ $(function() {
             };
         }
 
-        //Load image to FileReader
-        fileReader.readAsDataURL(imageInput.files[0]);
+        let file = imageInput.files[0];
+
+        //Check uploaded file type
+        if(file.type.indexOf('image') != -1) {
+            //Load image to FileReader
+            fileReader.readAsDataURL(file);
+        }
     });
 
     $('.color-picker').on('click', function(){
