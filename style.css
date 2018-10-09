@@ -82,10 +82,6 @@ body {
     display: block;
 }
 
-#image-container.selected {
-    box-shadow:  0 0 25px #56d8df;
-}
-
 .small-text {
     font-size: 9px;
     font-family: 'Fredoka One', cursive;

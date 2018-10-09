@@ -24,6 +24,8 @@ $(function() {
         let fileReader = new FileReader();
 
         $(imageContainer).removeClass('selected');
+        $(imageContainer).css('box-shadow', '');
+
         $('.selected-color').removeClass('choosed-color');
         imageContainer.src = '';
 
@@ -91,6 +93,8 @@ $(function() {
             $('#hex-text').text(hex);
 
             $('.selected-color').addClass('choosed-color');
+
+            $(imageContainer).css('box-shadow', '0px 0px 5px 20px ' + hex);
 
         }
     });
