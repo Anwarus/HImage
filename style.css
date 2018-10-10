@@ -73,13 +73,19 @@ body {
 }
 
 #image-container {
-    width: 96%;
-    height: 90%;
+    max-width: 96%;
+    max-height: 90%;
     left: 2%;
     top: 5%;
     position: absolute;
     z-index: -1;
     display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .small-text {
