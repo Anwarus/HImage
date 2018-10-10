@@ -1,5 +1,5 @@
 //We want to convert colors from 0-255 to 0-31 scale for better performance
-const NORMALIZED_MAX_VALUE = 31.0;
+const NORMALIZED_MAX_VALUE = 15.0;
 const DEFAULT_MAX_VALUE = 255.0
 
 export let Utils = (() => {

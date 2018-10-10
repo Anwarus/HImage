@@ -122,8 +122,3 @@ function rgbStringToObject(color) {
         b: parseInt(colorNumbers[2])
     };
 }
-
-window.validateForm() {
-    if($('#feedback-text').val().length === 0)
-        return false;
-}
