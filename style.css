@@ -63,13 +63,18 @@ body {
 
 .color-picker {
     fill: #4b3f72;
-    stroke: #8b78c9; 
+    stroke: #8b78c9;
     stroke-width: .5px;
-    transition: stroke-width 0.5s;
+    transition: stroke-width 0.5s, stroke 0.5s;
+}
+
+.color-picker:hover {
+    stroke: #3b2879;
 }
 
 .color-picker.selected {
     stroke-width: 1px;
+    stroke: #5b4899;
 }
 
 #image-container {
