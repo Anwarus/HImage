@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <input id="image-input" style="visibility: hidden;" type="file" accept="image/*" />
+        <svg id="title" width="100%" height="100%" viewbox="0, 0, 400, 200">
+            <!-- Polygon with logo text -->
+            <g id="logo">
+                <polygon points="0, 0, 400, 0, 360, 40, 40, 40, 0, 0" style="fill: #ffd166; stroke: #9f7106; stroke-width: .5px"/>
+                <text x="152" y="28" class="big-text">HImage</text>
+            </g>
+
+            <!-- Decoration polygon -->
+            <g id="decoration">
+                <polygon points="42, 42, 358, 42, 338, 62, 258, 62, 248, 52, 205, 52, 200, 47, 195, 52, 152, 52, 142, 62, 62, 62, 42, 42" style="fill: #ef476f; stroke: #8f000f; stroke-width: .5px" />
+                <text id="rgb-text" class="small-text selected-color" x="64" y="58">RGB</text>
+                <text id="hex-text" class="small-text selected-color" x="260" y="58">HEX</text>
+            </g>>
+
+            <!-- Color polygons -->
+            <g id="colors">
+                <polygon id="main-color" class="color-picker" points="200, 48, 208, 58, 208, 68, 200, 78, 192, 68, 192, 58, 200, 48" />
+                <polygon id="first-left-color" class="color-picker" points="215, 53, 221, 58, 221, 68, 215, 75, 209, 68, 209, 58, 215, 53" />
+                <polygon id="second-left-color" class="color-picker" points="228, 53, 234, 58, 234, 68, 228, 75, 222, 68, 222, 58, 228, 53" />
+                <polygon id="first-right-color" class="color-picker" points="185, 53, 191, 58, 191, 68, 185, 75, 179, 68, 179, 58, 185, 53" />
+                <polygon id="second-right-color" class="color-picker" points="172, 53, 178, 58, 178, 68, 172, 75, 166, 68, 166, 58, 172, 53" />
+            </g>
+
+            <!-- Polygon for select image -->
+            <g id="select-image">
+                <polygon class="positional" points="102, 102, 142, 102, 152, 112, 248, 112, 258, 102, 298, 102, 268, 132, 132, 132, 102, 102" style="fill: #ef476f; stroke: #8f000f; stroke-width: .5px"/>
+                <text x="152" y="128" class="interactable-text">Select Image</text>
+            </g>
+            
+        </svg>
+        <img id="image-container"/>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <i class="fas fa-file-upload fa-4x"></i><br><br>
+                Upload image - select any image from your hard drive
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-palette fa-4x"></i><br><br>
+                Get average and most used colors of seleted image
+            </div>
+            <div class="grid-item">
+                <i class="fas fa-copy fa-4x"></i><br><br>
+                Choose interesting color and copy it's representation in RGB or HEX
+            </div>
+        </div>
+        
+        <input type="text" id="text-container" style="visibility: hidden;" />
+
+        <form action="https://formspree.io/Anwarus1289@gmail.com" method="POST">
+            <input id="feedback-text" type="text" name="name">
+            <input type="submit" value="Give feedback">
+        </form> 
+
+        <footer style="padding-left: 25%; padding-right: 25%; background-color: #101a3b">
+            <p style="text-align: center;">
+                <a href="https://github.com/Anwarus">
+                    <i class="fab fa-github fa-3x" style="color: #2f3051; text-shadow: 2px 2px #0f1031;"></i>
+                </a>
+            </p>
+            <p style="text-align: center; color: #2f3051; text-shadow: 2px 2px #0f1031;">© 2018 HImage - Made by Anwarus</p>
+        </footer> 
+
+        <canvas id="canvas" style="display: none;" />
+
+        <script src="./app.js"></script>
+
+    </body>
+</html>
