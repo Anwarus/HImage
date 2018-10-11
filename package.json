@@ -1,0 +1,23 @@
+{
+  "name": "himage",
+  "version": "0.0.1",
+  "description": "find colors that fit to image",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require babel-register"
+  },
+  "author": "Anwarus",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "npm": "^6.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
